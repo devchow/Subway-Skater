@@ -63,7 +63,9 @@ public class GameManager : MonoBehaviour
 
     public void GetCoins()
     {
-        coinScore += CoinScoreAmt;
+        coinScore++;
+        coinText.text = coinScore.ToString("0");
+        score += CoinScoreAmt;
         scoreText.text = scoreText.text = score.ToString("0");
     }
 

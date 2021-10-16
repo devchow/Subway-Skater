@@ -14,7 +14,7 @@ public class PieceSpawner : MonoBehaviour
     
     public void Spawn()
     {
-        //currentPiece = // get me a new Piece from the pool
+        currentPiece = LevelManager.Instance.GetPiece(type, 0); // ---------- Randomize Later
         currentPiece.gameObject.SetActive(true);
         currentPiece.transform.SetParent(transform, false);
     }

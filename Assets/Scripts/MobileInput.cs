@@ -68,7 +68,6 @@ public class MobileInput : MonoBehaviour
         // Getting Player Inputs
         
         #region Standalone Inputs
-
         if (Input.GetMouseButtonDown(0))
         {
             tap = true;

@@ -19,11 +19,18 @@ public class PlayerMotor : MonoBehaviour
     private float jumpForce = 4.0f; // ---------Add Jump force
     private float gravity = 12.0f;
     private float verticalVelocity;
-    private float speed = 7.0f;
     private int desiredLane = 1; // 0 = Left, 1 = middle, 2 = Right
+    
+    // Speed modifier
+    private float originalSpeed = 7.0f;
+    private float speed;
+    private float speedIncreaseLastTick;
+    private float speedIncreaseTime = 2.5f; // ----- to 7.0f
+    private float speedIncreaseAmount = 0.1f;
     
     private void Start()
     {
+        speed = originalSpeed;
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
     }
@@ -33,6 +40,16 @@ public class PlayerMotor : MonoBehaviour
         // Tap to Start Game
         if(!isRunning)
             return;
+
+        // Speed Increase
+        if (Time.time - speedIncreaseLastTick > speedIncreaseTime)
+        {
+            speedIncreaseLastTick = Time.time;
+            speed += speedIncreaseAmount;
+            
+            // Change Modifier Score Text
+            GameManager.Instance.UpdateModifier(speed - originalSpeed);
+        }
         
         // Gather the inputs on which lane we should be
         // Move Left
@@ -92,7 +109,7 @@ public class PlayerMotor : MonoBehaviour
             if (MobileInput.Instance.SwipeDown)
             {
                 verticalVelocity = -jumpForce;
-                Debug.Log("Jumping Down");
+                Debug.Log("Down | Sliding");
             }
         }
         
@@ -111,13 +128,15 @@ public class PlayerMotor : MonoBehaviour
     private void StartSliding()
     {
         anim.SetBool("Sliding", true);
-        
+        controller.height /= 2;
+        controller.center = new Vector3(controller.center.x, controller.center.y / 2, controller.center.z);
     }
     
     private void StopSliding()
     {
-        
         anim.SetBool("Sliding", false);
+        controller.height *= 2;
+        controller.center = new Vector3(controller.center.x, controller.center.y * 2, controller.center.z);
     }
 
     private void MoveLane(bool goingRight)
@@ -148,6 +167,21 @@ public class PlayerMotor : MonoBehaviour
     {
         isRunning = true;
         anim.SetTrigger("StartRunning");
+    }
+
+    private void Crash()
+    {
+        anim.SetTrigger("Death");
+        isRunning = false;
+    }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        switch (hit.gameObject.tag)
+        {
+            case "Obstacle":
+                Crash();
+                break;
+        }
     }
 }
 

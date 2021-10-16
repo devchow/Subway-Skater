@@ -8,6 +8,9 @@ public class PlayerMotor : MonoBehaviour
     private const float LaneDistance = 3.0f;
     private const float TurnSpeed = 0.05f;
     
+    //
+    private bool isRunning = false;
+    
     // Animation
     private Animator anim;
     
@@ -27,6 +30,10 @@ public class PlayerMotor : MonoBehaviour
 
     private void Update()
     {
+        // Tap to Start Game
+        if(!isRunning)
+            return;
+        
         // Gather the inputs on which lane we should be
         // Move Left
         if (MobileInput.Instance.SwipeLeft)
@@ -69,6 +76,13 @@ public class PlayerMotor : MonoBehaviour
                 verticalVelocity = jumpForce;
                 Debug.Log("Jumping Up");
             }
+            
+            // Slide
+            else if (MobileInput.Instance.SwipeDown)
+            {
+                StartSliding();
+                Invoke("StopSliding", 1.0f); // Stop Sliding after 1 sec
+            }
         }
         else
         {
@@ -94,6 +108,18 @@ public class PlayerMotor : MonoBehaviour
         transform.forward = Vector3.Lerp(transform.forward,dir, TurnSpeed);
     }
 
+    private void StartSliding()
+    {
+        anim.SetBool("Sliding", true);
+        
+    }
+    
+    private void StopSliding()
+    {
+        
+        anim.SetBool("Sliding", false);
+    }
+
     private void MoveLane(bool goingRight)
     {
         desiredLane += (goingRight) ? 1 : -1;
@@ -116,6 +142,12 @@ public class PlayerMotor : MonoBehaviour
         Debug.DrawRay(groundRay.origin, groundRay.direction, Color.cyan, 1.0f);
 
         return (Physics.Raycast(groundRay, 0.2f + 0.1f));
+    }
+
+    public void StartRunning()
+    {
+        isRunning = true;
+        anim.SetTrigger("StartRunning");
     }
 }
 

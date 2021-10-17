@@ -29,6 +29,12 @@ public class GameManager : MonoBehaviour
     public Text coinText;
     [Header("Modifier")]
     public Text modifierText;
+    
+    // Game Over Menu
+    [Header("Game Over Panel")]
+    public Animator gameOverAnim;
+    public Text gameOverScore;
+    public Text gameOverCoins;
 
     private float score;
     private float coinScore;
@@ -84,6 +90,14 @@ public class GameManager : MonoBehaviour
     public void OnPlayButton()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void GameOver()
+    {
+        IsDead = true;
+        gameOverScore.text = score.ToString("0");
+        gameOverCoins.text = coinScore.ToString("0");
+        gameOverAnim.SetTrigger("gameOver");
     }
 }
 

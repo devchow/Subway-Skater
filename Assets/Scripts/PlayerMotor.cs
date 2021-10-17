@@ -173,7 +173,8 @@ public class PlayerMotor : MonoBehaviour
     {
         anim.SetTrigger("Death");
         isRunning = false;
-        GameManager.Instance.IsDead = true;
+        //GameManager.Instance.IsDead = true;
+        GameManager.Instance.GameOver();
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {

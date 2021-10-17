@@ -512,6 +512,7 @@ MonoBehaviour:
   - {fileID: 5947966774803318500, guid: 8dd49588e7624fb45a3be6cfeccc3a68, type: 3}
   - {fileID: 4902427924013007684, guid: 4d120c8b81eafe048ba0062e5c905ce9, type: 3}
   - {fileID: 3003808062506578422, guid: 4658a11fe6fa5cc4f882c8f37375215a, type: 3}
+  - {fileID: 2748376545305260570, guid: b2db7ce084b61374e8713d7e38d56b4e, type: 3}
   availableTransitions:
   - {fileID: 4520344635020050040, guid: 17af148599edfec4f92918ebb3cf20ec, type: 3}
   segments: []

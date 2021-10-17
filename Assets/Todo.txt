@@ -8,7 +8,9 @@
 - Logo / Background / Theme Colors / Icon
 
 # Potential Bugs
-- Score continues to count after Death (Pause Game Time after Death)
+- Add some Jump Force
+- Adjust Slide speed 0r Slide Height
+- Adjust Camera Follow
 
 
 

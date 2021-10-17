@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f551b532-b598-47d1-953f-c3dd67e20921" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Todo.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Todo.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FollowPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FollowPlayer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Subway Skater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Subway Skater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pieces/LongBlock/p0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pieces/LongBlock/p0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pieces/LongBlock/p1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pieces/LongBlock/p1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pieces/Slide/p0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pieces/Slide/p0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Segments/CenterRamp_10.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Segments/CenterRamp_10.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Segments/CenterSlide_15.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Segments/CenterSlide_15.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Segments/Center_10.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Segments/Center_10.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PieceSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PieceSpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMotor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMotor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Segment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Segment.cs" afterDir="false" />
@@ -76,7 +83,7 @@
       <updated>1634373602723</updated>
       <workItem from="1634373628432" duration="7025000" />
       <workItem from="1634393656671" duration="13986000" />
-      <workItem from="1634464167280" duration="5086000" />
+      <workItem from="1634464167280" duration="7731000" />
     </task>
     <servers />
   </component>

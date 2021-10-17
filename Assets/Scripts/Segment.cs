@@ -22,12 +22,30 @@ public class Segment : MonoBehaviour
     private void Awake()
     {
         pieces = gameObject.GetComponentsInChildren<PieceSpawner>();
+        
+        for (int i = 0; i < pieces.Length; i++)  //$$
+        {
+            foreach (MeshRenderer mr in pieces[i].GetComponentsInChildren<MeshRenderer>())
+            {
+                mr.enabled = LevelManager.Instance.showCollider;
+            }
+        }
+    }
+
+    private void Start()
+    {
+       
+        
     }
 
     public void Spawn()
     {
         gameObject.SetActive(true);
-        
+
+        for (int i = 0; i < pieces.Length; i++)
+        {
+            pieces[i].Spawn();
+        }
     }
 
     public void DeSpawn()

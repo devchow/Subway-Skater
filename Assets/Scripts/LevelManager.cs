@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
@@ -12,11 +13,12 @@ public class LevelManager : MonoBehaviour
         set;
     }
 
-    private const bool ShowCollider = true;
+    [FormerlySerializedAs("ShowCollider")] public bool showCollider = true; //-------- //$$
     
     // Leve Spawning
     private const float DistanceBeforeSpawn = 100.0f;
     private const int InitialSegments = 10;
+    private const int InitialTransitionSegments = 2;
     private const int MaxSegmentsOnScreen = 15;
     private Transform cameraContainer;
     private int amountOfActiveSegments;
@@ -58,7 +60,14 @@ public class LevelManager : MonoBehaviour
     {
         for (int i = 0; i < InitialSegments; i++)
         {
-            GenerateSegment();
+            if (i < InitialTransitionSegments)
+            {
+                SpawnTransition();
+            }
+            else
+            {
+                GenerateSegment();
+            }
         }
     }
 

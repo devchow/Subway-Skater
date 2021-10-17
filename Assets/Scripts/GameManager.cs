@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     private PlayerMotor motor;
     
     // UI & UI Fields
+    [Header("Game Canvas")]
+    public Animator gameCanvas;
     [Header("Score")]
     public Text scoreText;
     [Header("Coins")]
@@ -58,6 +60,10 @@ public class GameManager : MonoBehaviour
         {
             isGameStarted = true;
             motor.StartRunning();
+            FindObjectOfType<GlacierSpawner>().IsScrolling = true; //
+
+            FindObjectOfType<CameraMotor>().IsMoving = true;
+            gameCanvas.SetTrigger("Show");
         }
 
         // Give Score to Player for continued running
@@ -95,6 +101,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         IsDead = true;
+        FindObjectOfType<GlacierSpawner>().IsScrolling = false; //
         gameOverScore.text = score.ToString("0");
         gameOverCoins.text = coinScore.ToString("0");
         gameOverAnim.SetTrigger("gameOver");

@@ -756,6 +756,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876308c9b839c1a478cb9f63cee82d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCoin: 1
+  chanceToSpawn: 0.8
+  forceSpawnAll: 1
 --- !u!1 &5091967581149188973
 GameObject:
   m_ObjectHideFlags: 0

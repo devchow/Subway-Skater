@@ -17,20 +17,22 @@ public class CoinSpawner : MonoBehaviour
         {
             coins[i] = transform.GetChild(i).gameObject;
         }
+
+        OnDisable();
     }
 
     private void OnEnable()
     {
-        if (Random.Range(0.0f, 1.0f) < chanceToSpawn)
+        if (Random.Range(0.0f, 1.0f) > chanceToSpawn)
         {
             return;
         }
 
         if (forceSpawnAll)
         {
-            foreach (GameObject go in coins)
+            for (int i = 0; i < maxCoin; i++)
             {
-                go.SetActive(true);
+                coins[i].SetActive(true);
             }
         }
         else

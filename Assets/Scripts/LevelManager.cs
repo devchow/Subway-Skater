@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
@@ -57,6 +59,20 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < InitialSegments; i++)
         {
             GenerateSegment();
+        }
+    }
+
+    private void Update()
+    {
+        if (currentSpawnZ - cameraContainer.position.z < DistanceBeforeSpawn)
+        {
+            GenerateSegment();
+
+            if (amountOfActiveSegments >= MaxSegmentsOnScreen)
+            {
+                segments[amountOfActiveSegments - 1].DeSpawn();
+                amountOfActiveSegments--;
+            }
         }
     }
 

@@ -1,5 +1,10 @@
 // TODO List
 
+Defaults
+^^ Camera Rotation.x = 30
+^^ Curvature = 0.001
+^^ jump speed 4.0f
+
 # Additional Stuff { before game submission }
 - Start Menu
 - Credits Menu

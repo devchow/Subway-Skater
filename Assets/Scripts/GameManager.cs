@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -78,6 +79,11 @@ public class GameManager : MonoBehaviour
     {
         modifierScore = 1.0f + modifierAmount;
         modifierText.text = "x" + modifierScore.ToString("0.0");
+    }
+
+    public void OnPlayButton()
+    {
+        SceneManager.LoadScene("Game");
     }
 }
 

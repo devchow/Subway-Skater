@@ -27,7 +27,7 @@
             worldSpace.xyz -= _WorldSpaceCameraPos.xyz;
             worldSpace = float4(0.0f, (worldSpace.z * worldSpace.z) * - _Curvature, 0.0f, 0.0f);
 
-            v.vertex += mul(unity_WorldToObject, v.vertex);
+            v.vertex += mul(unity_WorldToObject, worldSpace);
         }
 
         void surf(Input IN, inout SurfaceOutput o) ///-----------------------

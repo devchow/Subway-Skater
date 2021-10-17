@@ -10,17 +10,17 @@ using UnityEngine;
 public class PieceSpawner : MonoBehaviour
 {
     public PieceType type;
-    private Piece currentPiece;
+    private Piece currentPieceSpawner;
     
     public void Spawn()
     {
-        currentPiece = LevelManager.Instance.GetPiece(type, 0); // ---------- Randomize Later
-        currentPiece.gameObject.SetActive(true);
-        currentPiece.transform.SetParent(transform, false);
+        currentPieceSpawner = LevelManager.Instance.GetPiece(type, 0); // ---------- Randomize Later
+        currentPieceSpawner.gameObject.SetActive(true);
+        currentPieceSpawner.transform.SetParent(transform, false);
     }
 
     public void DeSpawn()
     {
-        currentPiece.gameObject.SetActive(false);
+        currentPieceSpawner.gameObject.SetActive(false);
     }
 }

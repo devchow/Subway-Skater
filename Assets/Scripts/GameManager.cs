@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
         get;
     }
 
+    public bool IsDead
+    {
+        set;
+        get;
+    }
     private bool isGameStarted = false;
     private PlayerMotor motor;
     
@@ -49,7 +54,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Give Score to Player for continued running
-        if (isGameStarted)
+        if (isGameStarted && !IsDead)
         {
             // Bump the Score
             score += (Time.deltaTime * modifierScore);

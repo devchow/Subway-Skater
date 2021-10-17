@@ -1,0 +1,20 @@
+// TODO List
+
+# Additional Stuff { before game submission }
+- Start Menu
+- Credits Menu
+- Level Hardness Select
+- Cool UI Graphics
+- Logo / Background / Theme Colors / Icon
+
+# Potential Bugs
+- Score continues to count after Death (Pause Game Time after Death)
+
+
+
+# Improving GamPlay
+- Sound FX
+- Particle FX
+- SkyBox
+- Level hardness
+- Nice UI Graphics & UI Sounds

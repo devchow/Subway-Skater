@@ -17,16 +17,17 @@ public class Segment : MonoBehaviour
     public int beginY1, beginY2, beginY3;
     public int endY1, endY2, endY3;
 
-    private Piece[] pieces;
+    private PieceSpawner[] pieces;
 
     private void Awake()
     {
-        pieces = gameObject.GetComponentsInChildren<Piece>();
+        pieces = gameObject.GetComponentsInChildren<PieceSpawner>();
     }
 
     public void Spawn()
     {
         gameObject.SetActive(true);
+        
     }
 
     public void DeSpawn()

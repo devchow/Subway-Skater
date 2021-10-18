@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
@@ -147,10 +144,6 @@ public class PlayerMotor : MonoBehaviour
 
     private bool IsGrounded()
     {
-        // Ray groundRay = new Ray(new Vector3(controller.bounds.center.x,
-        //     (controller.bounds.center.y - controller.bounds.extents.y) + 0.2f, 
-        //     controller.bounds.center.z), Vector3.down);
-        
         Ray groundRay = new Ray(
             new Vector3(
                 controller.bounds.center.x,
@@ -173,7 +166,6 @@ public class PlayerMotor : MonoBehaviour
     {
         anim.SetTrigger("Death");
         isRunning = false;
-        //GameManager.Instance.IsDead = true;
         GameManager.Instance.GameOver();
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -186,34 +178,3 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -6,7 +6,6 @@ Defaults
 ^^ jump speed 4.0f
 
 # Additional Stuff { before game submission }
-- Start Menu
 - Credits Menu
 - Level Hardness Select
 - Cool UI Graphics

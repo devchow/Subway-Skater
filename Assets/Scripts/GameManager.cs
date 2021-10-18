@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -29,8 +26,10 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     [Header("Coins")]
     public Text coinText;
-    [Header("Modifier")]
+    [Header("Multiplier")]
     public Text modifierText;
+    [Header("High Score")]
+    public Text highScoreTxt;
     
     // Game Over Menu
     [Header("Game Over Panel")]
@@ -51,7 +50,8 @@ public class GameManager : MonoBehaviour
         
         modifierText.text = "x" + modifierScore.ToString("0.0");
         coinText.text = coinScore.ToString("0");
-        scoreText.text = scoreText.text = score.ToString("0");
+        //scoreText.text = scoreText.text = score.ToString("0");
+        scoreText.text = scoreText.text = scoreText.text = "SCORE " + score.ToString("0");
     }
 
     private void Update()
@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour
 
             FindObjectOfType<CameraMotor>().IsMoving = true;
             gameCanvas.SetTrigger("Show");
+
+            //highScoreTxt.text = PlayerPrefs.GetInt("HighScore").ToString();
         }
 
         // Give Score to Player for continued running
@@ -74,7 +76,7 @@ public class GameManager : MonoBehaviour
             if (lastScore != (int)score)
             {
                 lastScore = (int)score;
-                scoreText.text = score.ToString("0");
+                scoreText.text = "SCORE " + score.ToString("0");
             }
         }
     }
@@ -105,30 +107,14 @@ public class GameManager : MonoBehaviour
         gameOverScore.text = score.ToString("0");
         gameOverCoins.text = coinScore.ToString("0");
         gameOverAnim.SetTrigger("gameOver");
+        
+        // Check if this is a High Score
+        if (score > PlayerPrefs.GetInt("HighScore"))
+        {
+            var s = score;
+            if (s % 1 == 0)
+                s += 1;
+            PlayerPrefs.SetInt("HighScore", (int)s);
+        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

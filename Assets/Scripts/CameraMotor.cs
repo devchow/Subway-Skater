@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraMotor : MonoBehaviour
 {
@@ -14,12 +11,7 @@ public class CameraMotor : MonoBehaviour
         set;
         get;
     }
-
-    // private void Start()
-    // {
-    //     transform.position = lookAt.position + offset;
-    // }
-
+    
     private void LateUpdate()
     {
         if(!IsMoving)

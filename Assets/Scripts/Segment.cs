@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Segment : MonoBehaviour
 {
@@ -10,7 +7,8 @@ public class Segment : MonoBehaviour
         set;
         get;
     }
-
+    
+    [Header("Segments Settings")]
     public bool transition;
 
     public int length;
@@ -31,13 +29,7 @@ public class Segment : MonoBehaviour
             }
         }
     }
-
-    private void Start()
-    {
-       
-        
-    }
-
+    
     public void Spawn()
     {
         gameObject.SetActive(true);
@@ -53,21 +45,3 @@ public class Segment : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

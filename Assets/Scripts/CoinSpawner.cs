@@ -1,9 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class CoinSpawner : MonoBehaviour
 {
+    [Header("Coin Properties")]
     public int maxCoin = 5;
     public float chanceToSpawn = 0.5f;
     public bool forceSpawnAll = true;
@@ -53,13 +53,3 @@ public class CoinSpawner : MonoBehaviour
         }
     }
 }
-
-
-
-
-
-
-
-
-
-

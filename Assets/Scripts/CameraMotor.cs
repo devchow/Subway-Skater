@@ -20,6 +20,6 @@ public class CameraMotor : MonoBehaviour
         Vector3 desiredPos = lookAt.position + offset;
         desiredPos.x = 0;
         transform.position = Vector3.Lerp(transform.position, desiredPos, 0.1f);
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), 0.07f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), 0.1f);
     }
 }

@@ -125,15 +125,15 @@ public class PlayerMotor : MonoBehaviour
     private void StartSliding()
     {
         anim.SetBool("Sliding", true);
-        controller.height /= 2;
-        controller.center = new Vector3(controller.center.x, controller.center.y / 2, controller.center.z);
+        controller.height /= 3;
+        controller.center = new Vector3(controller.center.x, controller.center.y / 3, controller.center.z);
     }
     
     private void StopSliding()
     {
         anim.SetBool("Sliding", false);
-        controller.height *= 2;
-        controller.center = new Vector3(controller.center.x, controller.center.y * 2, controller.center.z);
+        controller.height *= 3;
+        controller.center = new Vector3(controller.center.x, controller.center.y * 3, controller.center.z);
     }
 
     private void MoveLane(bool goingRight)

@@ -102,11 +102,13 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        FindObjectOfType<AudioManager>().gameOver.Play();
         IsDead = true;
         FindObjectOfType<GlacierSpawner>().IsScrolling = false; //
-        gameOverScore.text = score.ToString("0");
-        gameOverCoins.text = coinScore.ToString("0");
+        gameOverScore.text = "HIGH SCORE " + PlayerPrefs.GetInt("HighScore").ToString();
+        gameOverCoins.text = "COINS " + coinScore.ToString("0");
         gameOverAnim.SetTrigger("gameOver");
+        //highScoreTxt.text = PlayerPrefs.GetInt("HighScore").ToString();
         
         // Check if this is a High Score
         if (score > PlayerPrefs.GetInt("HighScore"))
@@ -116,5 +118,10 @@ public class GameManager : MonoBehaviour
                 s += 1;
             PlayerPrefs.SetInt("HighScore", (int)s);
         }
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }

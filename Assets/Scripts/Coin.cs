@@ -19,6 +19,7 @@ public class Coin : MonoBehaviour
         {
             GameManager.Instance.GetCoins();
             anim.SetTrigger("Collected");
+            FindObjectOfType<AudioManager>().coinCollect.Play();
             //Destroy(gameObject, 1.5f);
         }
     }
